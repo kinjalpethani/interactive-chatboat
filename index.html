@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inmate - Chatboat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link href="dist/css/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="dist/jquery.convform.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="dist/css/demo.css">
+</head>
+<body>
+<section id="demo">
+    <div class="vertical-align">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 col-xs-offset-0">
+                    <div class="card no-border">
+                        <div id="chat" class="conv-form-wrapper">
+                            <input type="text" name="uname"
+                                   data-conv-question="Hello! I'm here to help you. Alright! First, tell me your name."
+                                   data-callback="storeServiceState">
+                            <select name="service"
+                                    data-conv-question="Hi, {uname}:0, What kind information would you like to know ?" required>
+                                <option value="account_create" data-callback="createAccount">Create Account</option>
+                                <option value="balance" data-callback="fetchBalance">Balance</option>
+                                <option value="check_transaction" data-callback="checkTransaction">Check My
+                                    Transactions
+                                </option>
+                                <option value="balance_deposit" data-callback="depositBalance">Deposit Balance
+                                </option>
+                                <option value="balance_work" data-callback="balanceWorkInfo">How does balance work
+                                </option>
+                            </select>
+                            <div data-conv-fork="service">
+                                <div data-conv-case="account_create">
+                                    <input type="text"
+                                           data-conv-question="You can create profile using provided link."
+                                           data-no-answer="true">
+                                </div>
+                                <div data-conv-case="balance">
+                                    <input type="text" data-conv-question="Your balance is  "
+                                           data-no-answer="true">
+                                </div>
+                                <div data-conv-case="check_transaction">
+                                    <input type="text" data-conv-question=""
+                                           data-no-answer="true">
+                                </div>
+                                <div data-conv-case="balance_deposit">
+                                    <input type="text" data-conv-question="Your deposit is "
+                                           data-no-answer="true">
+                                </div>
+                                <div data-conv-case="balance_work">
+                                    <input type="text" data-conv-question="Balance work is "
+                                           data-no-answer="true">
+                                </div>
+                            </div>
+                            <select name="confirmation"
+                                    data-conv-question="Want to go to the 'information' question before?" required>
+                                <option value="yes" data-callback="rollback">Yes</option>
+                                <option value="no" data-callback="endChat">No</option>
+                            </select>
+                            <input type="text" name="customerId" id="customerId"
+                                   data-conv-question="Hi, {uname}:0! To get information, Please provide me your customer ID"
+                                   data-pattern="^\d{1,15}$">
+                            <input type="text" name="customerZip" id="customerZip"
+                                   data-conv-question="Please enter zip code" data-callback="checkCredentials"
+                                   data-pattern="^\d{1,5}$">
+                            <input type="text" name="facilityName" id="facilityName"
+                                   data-conv-question="Please enter facility name" data-callback="checkFacility"
+                                   data-pattern="[a-zA-Z0-9 ]+">
+                            <select name="facilityId" id="facilityId" data-callback="verifyProduct"
+                                    data-conv-question="Select facility for product verification" required>
+                            </select>
+                            <input type="text"
+                                   data-conv-question="Thank you {uname}:0 for reaching out us!"
+                                   id="" data-no-answer="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="dist/autosize.min.js"></script>
+<script type="text/javascript" src="dist/jquery.convform.js"></script>
+<script type="text/javascript" src="dist/custom.js"></script>
+
+
+</body>
+</html>
