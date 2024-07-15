@@ -512,7 +512,7 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
                 $(this).find(parameters.inputIdHashTagName).val("");
                 if(state.current.input.type == 'select'){
                     if(!state.current.input.multiple){
-                        state.answerWith(state.current.input.selected.text, state.current.input.selected);
+                        // state.answerWith(state.current.input.selected.text, state.current.input.selected);
                     } else {
                         state.answerWith(state.current.input.selected.join(', '), state.current.input.selected);
                     }
