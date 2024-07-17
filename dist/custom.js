@@ -1,7 +1,7 @@
 jQuery(function ($) {
     convForm = $('#chat').convform({selectInputStyle: 'disable'});
 });
-const API_URL = 'http://127.0.0.1:3012/api/chatboat/';
+const API_URL = '{APU_URL}';
 const headers = {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*'
@@ -14,20 +14,20 @@ $(document).ready(function () {
     transactionState = getNthNext(convForm.current, 4);
     depositState = getNthNext(convForm.current, 5);
     balanceWorkState = getNthNext(convForm.current, 6);
-    confirmationState = getNthNext(convForm.current, 7);
-    customerIdState = getNthNext(convForm.current, 8);
-    facilityNameState = getNthNext(convForm.current, 10);
-    facilityIdState = getNthNext(convForm.current, 11);
-    productIdState = getNthNext(convForm.current, 12);
-    inmateIdState = getNthNext(convForm.current, 13);
-    customerNumberState = getNthNext(convForm.current, 14);
-    depositAmountState = getNthNext(convForm.current, 15);
-    displayAmountState = getNthNext(convForm.current, 16);
-    creditCardNumberState = getNthNext(convForm.current, 18);
-    expiryDateState = getNthNext(convForm.current, 19);
-    cvvState = getNthNext(convForm.current, 20);
-    transactionMsgState = getNthNext(convForm.current, 21);
-    endChatState = getNthNext(convForm.current, 22);
+    confirmationState = getNthNext(convForm.current, 11);
+    customerIdState = getNthNext(convForm.current, 12);
+    facilityNameState = getNthNext(convForm.current, 14);
+    facilityIdState = getNthNext(convForm.current, 15);
+    productIdState = getNthNext(convForm.current, 16);
+    inmateIdState = getNthNext(convForm.current, 17);
+    customerNumberState = getNthNext(convForm.current, 18);
+    depositAmountState = getNthNext(convForm.current, 19);
+    displayAmountState = getNthNext(convForm.current, 20);
+    creditCardNumberState = getNthNext(convForm.current, 22);
+    expiryDateState = getNthNext(convForm.current, 23);
+    cvvState = getNthNext(convForm.current, 24);
+    transactionMsgState = getNthNext(convForm.current, 25);
+    endChatState = getNthNext(convForm.current, 26);
 });
 
 async function apiPost(endpoint, data) {

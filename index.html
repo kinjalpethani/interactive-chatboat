@@ -50,8 +50,36 @@
                                            data-no-answer="true">
                                 </div>
                                 <div data-conv-case="balance_work">
-                                    <input type="text" data-conv-question="Balance work is"
-                                           data-no-answer="true">
+                                    <select name="balance_options"
+                                            data-conv-question="Now, with our Pre-Paid Phone Options, families can ensure that their loved ones can call them direct on either their home or mobile phone. There are three ways an inmate can get in touch with their loved ones">
+                                        <option value="prepaid">Pre-Paid Collect Call Accounts</option>
+                                        <option value="pindebit">Inmate Pin Debit Accounts</option>
+                                        <option value="callcard">Phone Cards</option>
+                                        <option value="commissary">Commissary</option>
+                                    </select>
+                                    <div data-conv-fork="balance_options">
+                                        <div data-conv-case="prepaid">
+                                            <input type="text"
+                                                   data-conv-question="(PPC) allow your loved one to call you either at home or on your mobile device. Friends and family can create an account and deposit money conveniently and securely. This account belongs only to the owner of the account/phone number, who is the only person to add funds, inquire about call charges and balances, and request any changes to the account. The funds you add to your pre-paid account can only be used to call the designated phone number on the account. To start a prepaid collect calling account, Login and make a payment. Or you can call and speak with one of our Customer Service Representatives to find out more information and set up or add funds to an account."
+                                                   data-no-answer="true">
+                                        </div>
+                                        <div data-conv-case="pindebit">
+                                            <input type="text"
+                                                   data-conv-question="This is the another way inmates can call their loved ones, allowing the inmate to choose who they want to call using the funds placed on their Pin Debit Account. This type of account is only available at certain Facilities that choose to provide this option. The inmate is assigned a unique PIN number to access their account to make phone calls. Friends and Family can also deposit money into this account conveniently and securely through this website or through the assistance of a Customer Service Representative. Once funds are added to the inmate’s Pin Debit account, the funds belong to the inmate to call any phone number they so choose. Only the inmate can know the call charges, balances, or any other activity with their account.
+                                                   Inmates are given Dialing Instructions in the Facility, as there are different ways to dial out correctly to make a phone call using one of these two phone accounts. ( Pre-Paid Collect Calling: Dial 0 + Phone Number // Pin Debit Calling: Dial 1 + Phone Number )."
+                                                   data-no-answer="true">
+                                        </div>
+                                        <div data-conv-case="callcard">
+                                            <input type="text"
+                                                   data-conv-question="Another way inmates can call their loved ones is by purchasing Phone Cards at their facility to make telephone calls at discounted rates. Typically, these phone cards will be sold through facility's commissary, if the facility provides this option."
+                                                   data-no-answer="true">
+                                        </div>
+                                        <div data-conv-case="commissary">
+                                            <input type="text"
+                                                   data-conv-question="You can also deposit funds into an inmate’s Commissary account. This allows the inmate to use the funds in his/her account for items they can purchase in Commissary, if the facility provides this option. Furthermore, the inmate can choose to purchase phone cards through this method of payment."
+                                                   data-no-answer="true">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <select name="confirmation"
